@@ -23,7 +23,7 @@ func TestCurrenciesFilter(t *testing.T) {
 	response := httptest.NewRecorder()
 
 	Server().ServeHTTP(response, request)
-	assert.Equal(t, "{\"base\":\"USD\",\"rates\":[{\"currency\":\"USD\",\"rate\":1}]}\n", response.Body.String())
+	assert.Equal(t, "{\"base\":\"USD\",\"rates\":[{\"currency\":\"USD\",\"name\":\"United States Dollar\",\"rate\":1}]}\n", response.Body.String())
 }
 
 func TestSymbol(t *testing.T) {
@@ -31,6 +31,6 @@ func TestSymbol(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/api/symbols", nil)
 	response := httptest.NewRecorder()
 	Server().ServeHTTP(response, request)
-	assert.Equal(t, "{\"symbols\":[{\"id\":\"USD\",\"name\":\"United States Dollar\"},{\"id\":\"CAD\",\"name\":\"Canadian Dollar\"},{\"id\":\"IDR\",\"name\":\"Indonesian Rupiah\"},{\"id\":\"GBP\",\"name\":\"British Pound Sterling\"},{\"id\":\"CHF\",\"name\":\"Swiss Franc\"},{\"id\":\"SGD\",\"name\":\"Singapore Dollar\"},{\"id\":\"INR\",\"name\":\"Indian Rupee\"},{\"id\":\"MYR\",\"name\":\"Malaysian Ringgit\"},{\"id\":\"JPY\",\"name\":\"Japanese Yen\"},{\"id\":\"KRW\",\"name\":\"South Korean Won\"}]}\n", response.Body.String())
+	assert.Equal(t, "{\"symbols\":[{\"id\":\"USD\",\"name\":\"United States Dollar\"},{\"id\":\"EUR\",\"name\":\"Euro\"},{\"id\":\"CAD\",\"name\":\"Canadian Dollar\"},{\"id\":\"IDR\",\"name\":\"Indonesian Rupiah\"},{\"id\":\"GBP\",\"name\":\"British Pound Sterling\"},{\"id\":\"CHF\",\"name\":\"Swiss Franc\"},{\"id\":\"SGD\",\"name\":\"Singapore Dollar\"},{\"id\":\"INR\",\"name\":\"Indian Rupee\"},{\"id\":\"MYR\",\"name\":\"Malaysian Ringgit\"},{\"id\":\"JPY\",\"name\":\"Japanese Yen\"},{\"id\":\"KRW\",\"name\":\"South Korean Won\"}]}\n", response.Body.String())
 	t.Log(response.Body.String())
 }
