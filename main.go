@@ -13,8 +13,8 @@ var filterCurrencies Currencies
 
 func Server() *mux.Router {
 	r := mux.NewRouter()
-	r.HandleFunc("/api/currencies", getCurrencies).Methods("GET")
-	r.HandleFunc("/api/symbols", getSymbols).Methods("GET")
+	r.HandleFunc("/api/currencies", getCurrencies).Methods("GET", "OPTIONS")
+	r.HandleFunc("/api/symbols", getSymbols).Methods("GET", "OPTIONS")
 	return r
 }
 

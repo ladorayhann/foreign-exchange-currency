@@ -7,6 +7,10 @@ func symbolsSeeder(symbols Symbols) Symbols {
 			Name: "United States Dollar",
 		})
 		symbols.Symbols = append(symbols.Symbols, Symbol{
+			ID:   "EUR",
+			Name: "Euro",
+		})
+		symbols.Symbols = append(symbols.Symbols, Symbol{
 			ID:   "CAD",
 			Name: "Canadian Dollar",
 		})
@@ -53,43 +57,58 @@ func currenciesSeeder(currencies Currencies) Currencies {
 		currencies.Base = "USD"
 		currencies.Rates = append(currencies.Rates, Rates{
 			Currency: "USD",
+			Name: "United States Dollar",
 			Rate:     1,
 		})
 		currencies.Rates = append(currencies.Rates, Rates{
+			Currency: "EUR",
+			Name: "Euro",
+			Rate:     0.83,
+		})
+		currencies.Rates = append(currencies.Rates, Rates{
 			Currency: "CAD",
+			Name: "Canadian Dollar",
 			Rate:     1.22,
 		})
 		currencies.Rates = append(currencies.Rates, Rates{
 			Currency: "IDR",
+			Name: "Indonesian Rupiah",
 			Rate:     14259.35,
 		})
 		currencies.Rates = append(currencies.Rates, Rates{
 			Currency: "GBP",
+			Name: "British Pound Sterling",
 			Rate:     0.71,
 		})
 		currencies.Rates = append(currencies.Rates, Rates{
 			Currency: "CHF",
+			Name: "Swiss Franc",
 			Rate:     0.90,
 		})
 		currencies.Rates = append(currencies.Rates, Rates{
 			Currency: "SGD",
+			Name: "Singapore Dollar",
 			Rate:     1.33,
 		})
 		currencies.Rates = append(currencies.Rates, Rates{
 			Currency: "INR",
+			Name: "Indian Rupee",
 			Rate:     73.37,
 		})
 		currencies.Rates = append(currencies.Rates, Rates{
 			Currency: "MYR",
+			Name: "Malaysian Ringgit",
 			Rate:     4.12,
 		})
 		currencies.Rates = append(currencies.Rates, Rates{
 			Currency: "JPY",
 			Rate:     110.12,
+			Name: "Japanese Yen",
 		})
 		currencies.Rates = append(currencies.Rates, Rates{
 			Currency: "KRW",
 			Rate:     1118.44,
+			Name: "South Korean Won",
 		})
 	}
 	return currencies

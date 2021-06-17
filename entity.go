@@ -16,5 +16,6 @@ type Currencies struct {
 
 type Rates struct {
 	Currency string  `json:"currency"`
+	Name     string  `json:"name"`
 	Rate     float64 `json:"rate"`
 }

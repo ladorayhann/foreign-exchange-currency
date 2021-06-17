@@ -6,13 +6,10 @@ WORKDIR /app
 
 COPY go.mod .
 COPY go.sum .
+COPY Makefile .
 
 RUN go mod download
 
 COPY . .
 
 ENV PORT 8000
-
-RUN go build
-
-CMD ["./foreign-exchange-currency"]
